@@ -19,7 +19,7 @@ class MediaStorage(FileSystemStorage):
         if getattr(settings, 'MEDIA_OVERWRITE_WITH_NEW', False):
             self.delete(name)
             return name
-        return super().get_available_name(name, max_length)
+        return super(MediaStorage, self).get_available_name(name, max_length)
 
 
 @python_2_unicode_compatible
